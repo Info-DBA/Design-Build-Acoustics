@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DBA Design Build Acoustics</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1s ease-in-out;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      text-align: center;
+    }
+
+    .floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ffffff;
+      color: #000000;
+      padding: 14px 18px;
+      border-radius: 50px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      text-decoration: none;
+      font-weight: bold;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    .floating-button:hover {
+      background-color: #dddddd;
+      color: #000;
+    }
+
+    .services-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      padding: 40px 20px;
+    }
+
+    .service-block {
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: white;
+      padding: 30px;
+      max-width: 300px;
+      min-width: 260px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-block::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    .service-block h2, .service-block p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .service-block:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Individual Background Images */
+    .service-design { background-image: url('design.jpg'); }
+    .service-install { background-image: url('install.jpg'); }
+    .service-wall { background-image: url('wall-panels.jpg'); }
+    .service-ceiling { background-image: url('ceiling-panels.jpg'); }
+    .service-printed { background-image: url('printed.jpg'); }
+  </style>
+  <script>
+    const backgrounds = [
+      "MAIN.jpg",
+      "MAIN 2.jpg",
+      "MAIN3.jpg"
+    ];
+    let i = 0;
+    setInterval(() => {
+      document.body.style.backgroundImage = `url('${backgrounds[i]}')`;
+      i = (i + 1) % backgrounds.length;
+    }, 10000);
+  </script>
+</head>
+<body>
+
+  <div class="services-container">
+    <div class="service-block service-design">
+      <h2>ACOUSTIC DESIGN SERVICE.</h2>
+      <p>Providing detailed CAD drawings bringing your designs to life with clarity and care.</p>
+    </div>
+    <div class="service-block service-install">
+      <h2>ACOUSTIC SUPPLY AND INSTALL SERVICE.</h2>
+      <p>Client-centred installation by expert installers of acoustic treatments.</p>
+    </div>
+    <div class="service-block service-wall">
+      <h2>ACOUSTIC WALL PANELS.</h2>
+      <p>Decorative, functional, and practical. Textured or custom cut designs.</p>
+    </div>
+    <div class="service-block service-ceiling">
+      <h2>HANGING CEILING PANELS.</h2>
+      <p>Versatile, effective acoustic solutions with rafts or clouds.</p>
+    </div>
+    <div class="service-block service-printed">
+      <h2>PRINTED.</h2>
+      <p>Customize acoustic panels with your artwork or logo.</p>
+    </div>
+  </div>
+
+  <div id="contact">
+    <p>We design and build architectural acoustic solutions.</p>
+    <p>Email: info@designbuildacoustics.com | Phone: 07956839366</p>
+  </div>
+
+  <a href="#contact" class="floating-button">Contact Us</a>
+
+</body>
+</html>
