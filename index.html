@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,12 +8,12 @@
     body {
       margin: 0;
       padding: 0;
+      background: url('MAIN.jpg') no-repeat center center fixed;
       background-size: cover;
-      background-position: center;
-      transition: background-image 1s ease-in-out;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #fff;
       text-align: center;
+      transition: background-image 2s ease-in-out;
     }
 
     .floating-button {
@@ -31,6 +30,7 @@
       z-index: 1000;
       transition: all 0.3s ease;
     }
+
     .floating-button:hover {
       background-color: #dddddd;
       color: #000;
@@ -41,7 +41,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 40px;
-      padding: 40px 20px;
+      padding: 60px 20px;
     }
 
     .service-block {
@@ -77,25 +77,24 @@
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     }
 
-    /* Individual Background Images */
+    /* Background Images for Each Block */
     .service-design { background-image: url('design.jpg'); }
     .service-install { background-image: url('install.jpg'); }
     .service-wall { background-image: url('wall-panels.jpg'); }
     .service-ceiling { background-image: url('ceiling-panels.jpg'); }
     .service-printed { background-image: url('printed.jpg'); }
+
+    #contact {
+      padding: 40px 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    footer {
+      font-size: 0.9em;
+      color: #ccc;
+      margin-top: 40px;
+    }
   </style>
-  <script>
-    const backgrounds = [
-      "MAIN.jpg",
-      "MAIN 2.jpg",
-      "MAIN3.jpg"
-    ];
-    let i = 0;
-    setInterval(() => {
-      document.body.style.backgroundImage = `url('${backgrounds[i]}')`;
-      i = (i + 1) % backgrounds.length;
-    }, 10000);
-  </script>
 </head>
 <body>
 
@@ -123,11 +122,25 @@
   </div>
 
   <div id="contact">
+    <h2>Contact Us</h2>
     <p>We design and build architectural acoustic solutions.</p>
-    <p>Email: info@designbuildacoustics.com | Phone: 07956839366</p>
+    <p>Email: <a href="mailto:info@designbuildacoustics.com">info@designbuildacoustics.com</a></p>
+    <p>Phone: 07956839366</p>
   </div>
 
   <a href="#contact" class="floating-button">Contact Us</a>
 
+  <footer>
+    &copy; 2025 DBA Design Build Acoustics
+  </footer>
+
+  <script>
+    const images = ['MAIN.jpg', 'MAIN 2.jpg', 'MAIN3.jpg'];
+    let index = 0;
+    setInterval(() => {
+      document.body.style.backgroundImage = `url('${images[index]}')`;
+      index = (index + 1) % images.length;
+    }, 10000);
+  </script>
 </body>
 </html>
